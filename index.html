@@ -3,48 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Transform </title>
+
+    <title>Teacher's Month</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>TRANSFORM / TRANSLATE</h1>
-
-    <div class="container">
-        <div class="box-section">
-            <p>Before</p>
-            <div class="box" id="before">BOX</div>
-        </div>
-
-        <div class="box-section">
-            <p>After</p>
-            <div class="box" id="after">BOX</div>
-        </div>
+    <div id="start">
+        <button onclick="showSurprise()">CLICK ME</button>
     </div>
 
-    <div class="buttons">
-        <button onclick="setTransform('translate')">Translate</button>
-        <button onclick="setTransform('rotate')">Rotate</button>
-        <button onclick="setTransform('scale')">Scale</button>
-        <button onclick="setTransform('skew')">Skew</button>
+
+    <div id="surprise">
+
+        <div class="card">
+
+            <h1>Happy Teacher's Month!</h1>
+
+            <p class="message">
+                Thank you for teaching, guiding, and inspiring us.
+                We truly appreciate all your hard work and patience.
+                Happy Teacher's Month, Ma'am/Sir!
+            </p>
+
+            <img src="teacher.jpg" class="teacher-picture">
+
+            <audio id="music" controls>
+                <source src="song.mp3" type="audio/mpeg">
+            </audio>
+
+        </div>
+
     </div>
+
 
     <script>
-        function setTransform(type) {
-            const afterBox = document.getElementById("after");
 
-            
-            afterBox.classList.remove("translate", "rotate", "scale", "skew");
+        function showSurprise() {
 
-            
-            afterBox.classList.add(type);
+            document.getElementById("start").style.display = "none";
 
-            
-            document.querySelector("h1").textContent = "TRANSFORM : " + type.toUpperCase();
+            document.getElementById("surprise").style.display = "flex";
+
+            document.querySelector(".card").classList.add("show");
+
+            document.getElementById("music").play();
+
         }
 
-        
-        setTransform('translate');
     </script>
 
 </body>
